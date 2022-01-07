@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="title">{{plat.name}}</h1>
+    <p>prix : {{plat.price}} €</p>
+    <p>stock : {{plat.stock}}</p>
+    <div *ngIf="isHome">
+        <div>
+            <span> Quantité commander :</span>
+            <button [disabled]="quantity<= 1 || plat.stock<1" (click)="decreaseQuantity()"> - </button>            
+            <span>{{ quantity }}</span>
+            <button [disabled]="quantity === plat.stock || plat.stock<1" (click)="increaseQuantity()"> + </button>
+        </div>
+        <button [disabled]="plat.stock<1" (click)="order(plat.id)">Commander</button>
+    </div>
+    <button *ngIf="!isHome" (click)="update(plat.id)">Modifier</button>
+</div>

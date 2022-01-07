@@ -1,0 +1,5 @@
+<div class="container">
+    <div *ngFor="let plat of plats">
+        <app-plat (platOrdered)="orderPlat($event)" [plat]="plat" [isHome]="true"></app-plat>
+    </div>
+</div>

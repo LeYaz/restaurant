@@ -1,0 +1,23 @@
+<div class="container">
+    <div *ngFor="let plat of plats">
+        <app-plat (platId)="updatePlat($event)" [plat]="plat" [isHome]="false"></app-plat>
+    </div>
+</div>
+<div class="container">
+    <button (click)="add()"> Ajouter un plat </button>
+</div>
+<form *ngIf="showAdd">
+    <div>
+        <label>Nom :</label>
+        <input [(ngModel)]="newPlat.name" type="text" name="name">
+    </div>
+    <div>
+        <label>Prix :</label>
+        <input [(ngModel)]="newPlat.price" type="number" name="price">
+    </div>
+    <div>
+        <label> Stock: </label>
+        <input [(ngModel)]="newPlat.stock" type="number" name="stock">
+    </div>
+    <button (click)="save()"> Enregistrer</button>
+</form>

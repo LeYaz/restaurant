@@ -1,0 +1,16 @@
+
+.container{
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5%;
+    text-align: center;
+    margin: 10px;
+}
+
+.title{
+    text-transform: uppercase;
+}
+
+.container button{
+    margin-bottom: 10px;
+}
